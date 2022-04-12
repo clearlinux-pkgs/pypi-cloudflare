@@ -6,7 +6,7 @@
 #
 Name     : pypi-cloudflare
 Version  : 2.8.15
-Release  : 27
+Release  : 28
 URL      : https://files.pythonhosted.org/packages/f9/b1/42b74b3f19609a63c42fb0c8a5474a98aa72f1d122cf3eea57ff27e8ac01/cloudflare-2.8.15.tar.gz
 Source0  : https://files.pythonhosted.org/packages/f9/b1/42b74b3f19609a63c42fb0c8a5474a98aa72f1d122cf3eea57ff27e8ac01/cloudflare-2.8.15.tar.gz
 Source1  : https://files.pythonhosted.org/packages/f9/b1/42b74b3f19609a63c42fb0c8a5474a98aa72f1d122cf3eea57ff27e8ac01/cloudflare-2.8.15.tar.gz.asc
@@ -19,14 +19,10 @@ Requires: pypi-cloudflare-man = %{version}-%{release}
 Requires: pypi-cloudflare-python = %{version}-%{release}
 Requires: pypi-cloudflare-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
-Provides: cloudflare
-Provides: cloudflare-python
-Provides: cloudflare-python3
 BuildRequires : pypi(beautifulsoup4)
 BuildRequires : pypi(jsonlines)
 BuildRequires : pypi(pyyaml)
 BuildRequires : pypi(requests)
-BuildRequires : python-future
 
 %description
 =================
@@ -93,7 +89,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1641423679
+export SOURCE_DATE_EPOCH=1649776854
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
