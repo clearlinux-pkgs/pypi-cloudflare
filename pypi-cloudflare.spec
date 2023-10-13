@@ -5,7 +5,7 @@
 #
 Name     : pypi-cloudflare
 Version  : 2.12.4
-Release  : 39
+Release  : 40
 URL      : https://files.pythonhosted.org/packages/1e/88/a1678ab307552afa69b39156b5c6e33ab77ae333ad183ce279a6006ca491/cloudflare-2.12.4.tar.gz
 Source0  : https://files.pythonhosted.org/packages/1e/88/a1678ab307552afa69b39156b5c6e33ab77ae333ad183ce279a6006ca491/cloudflare-2.12.4.tar.gz
 Summary  : Python wrapper for the Cloudflare v4 API
