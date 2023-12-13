@@ -6,10 +6,10 @@
 # autospec commit: c1050fe
 #
 Name     : pypi-cloudflare
-Version  : 2.14.2
-Release  : 42
-URL      : https://files.pythonhosted.org/packages/fd/ad/f3df6ba6e289d468c9c92b4295d9e3ff988e0b85d126f3a525be1bce6d9e/cloudflare-2.14.2.tar.gz
-Source0  : https://files.pythonhosted.org/packages/fd/ad/f3df6ba6e289d468c9c92b4295d9e3ff988e0b85d126f3a525be1bce6d9e/cloudflare-2.14.2.tar.gz
+Version  : 2.14.3
+Release  : 43
+URL      : https://files.pythonhosted.org/packages/48/ba/1ae8a3beef8bad4164272b829a82cd8daefeb02d09e8f1c8278d6fd5f37b/cloudflare-2.14.3.tar.gz
+Source0  : https://files.pythonhosted.org/packages/48/ba/1ae8a3beef8bad4164272b829a82cd8daefeb02d09e8f1c8278d6fd5f37b/cloudflare-2.14.3.tar.gz
 Summary  : Python wrapper for the Cloudflare v4 API
 Group    : Development/Tools
 License  : MIT
@@ -82,10 +82,10 @@ python3 components for the pypi-cloudflare package.
 
 
 %prep
-%setup -q -n cloudflare-2.14.2
-cd %{_builddir}/cloudflare-2.14.2
+%setup -q -n cloudflare-2.14.3
+cd %{_builddir}/cloudflare-2.14.3
 pushd ..
-cp -a cloudflare-2.14.2 buildavx2
+cp -a cloudflare-2.14.3 buildavx2
 popd
 
 %build
@@ -93,7 +93,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1702066190
+export SOURCE_DATE_EPOCH=1702496320
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
