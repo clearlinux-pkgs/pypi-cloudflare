@@ -6,10 +6,10 @@
 # autospec commit: c1050fe
 #
 Name     : pypi-cloudflare
-Version  : 2.14.3
-Release  : 44
-URL      : https://files.pythonhosted.org/packages/48/ba/1ae8a3beef8bad4164272b829a82cd8daefeb02d09e8f1c8278d6fd5f37b/cloudflare-2.14.3.tar.gz
-Source0  : https://files.pythonhosted.org/packages/48/ba/1ae8a3beef8bad4164272b829a82cd8daefeb02d09e8f1c8278d6fd5f37b/cloudflare-2.14.3.tar.gz
+Version  : 2.15.0
+Release  : 45
+URL      : https://files.pythonhosted.org/packages/05/ea/e038f4a123b0d1b1b9bd1bb1da306221ad0a61610a372360f448828f95a5/cloudflare-2.15.0.tar.gz
+Source0  : https://files.pythonhosted.org/packages/05/ea/e038f4a123b0d1b1b9bd1bb1da306221ad0a61610a372360f448828f95a5/cloudflare-2.15.0.tar.gz
 Summary  : Python wrapper for the Cloudflare v4 API
 Group    : Development/Tools
 License  : MIT
@@ -19,7 +19,6 @@ Requires: pypi-cloudflare-man = %{version}-%{release}
 Requires: pypi-cloudflare-python = %{version}-%{release}
 Requires: pypi-cloudflare-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
-BuildRequires : pypi(beautifulsoup4)
 BuildRequires : pypi(jsonlines)
 BuildRequires : pypi(pyyaml)
 BuildRequires : pypi(requests)
@@ -72,7 +71,6 @@ Summary: python3 components for the pypi-cloudflare package.
 Group: Default
 Requires: python3-core
 Provides: pypi(cloudflare)
-Requires: pypi(beautifulsoup4)
 Requires: pypi(jsonlines)
 Requires: pypi(pyyaml)
 Requires: pypi(requests)
@@ -82,10 +80,10 @@ python3 components for the pypi-cloudflare package.
 
 
 %prep
-%setup -q -n cloudflare-2.14.3
-cd %{_builddir}/cloudflare-2.14.3
+%setup -q -n cloudflare-2.15.0
+cd %{_builddir}/cloudflare-2.15.0
 pushd ..
-cp -a cloudflare-2.14.3 buildavx2
+cp -a cloudflare-2.15.0 buildavx2
 popd
 
 %build
@@ -93,7 +91,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1702496320
+export SOURCE_DATE_EPOCH=1703778921
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
