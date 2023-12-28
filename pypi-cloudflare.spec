@@ -7,7 +7,7 @@
 #
 Name     : pypi-cloudflare
 Version  : 2.15.0
-Release  : 45
+Release  : 46
 URL      : https://files.pythonhosted.org/packages/05/ea/e038f4a123b0d1b1b9bd1bb1da306221ad0a61610a372360f448828f95a5/cloudflare-2.15.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/05/ea/e038f4a123b0d1b1b9bd1bb1da306221ad0a61610a372360f448828f95a5/cloudflare-2.15.0.tar.gz
 Summary  : Python wrapper for the Cloudflare v4 API
@@ -91,7 +91,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1703778921
+export SOURCE_DATE_EPOCH=1703779836
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -149,6 +149,9 @@ FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS -m64 -march=x86-64-v3 "
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS -m64 -march=x86-64-v3 "
 python3 -tt setup.py build install --root=%{buildroot}-v3
 popd
+## Remove excluded files
+rm -f %{buildroot}*/usr/lib/python*/site-packages/tests/__init__.py
+rm -f %{buildroot}*/usr/lib/python*/site-packages/tests/__pycache__/__init__.cpython-*.pyc
 ## install_append content
 sitedir=$(python -c "import sys; print(sys.path[-1])")
 rm -rf %{buildroot}/${sitedir}/examples
