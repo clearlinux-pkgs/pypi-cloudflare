@@ -6,10 +6,10 @@
 # autospec commit: da8b975
 #
 Name     : pypi-cloudflare
-Version  : 2.18.1
-Release  : 50
-URL      : https://files.pythonhosted.org/packages/c7/d2/c1de53bd8cb3b9013018e9d0138ebcc49b49f27603d8f77310b2ace9bbb5/cloudflare-2.18.1.tar.gz
-Source0  : https://files.pythonhosted.org/packages/c7/d2/c1de53bd8cb3b9013018e9d0138ebcc49b49f27603d8f77310b2ace9bbb5/cloudflare-2.18.1.tar.gz
+Version  : 2.18.2
+Release  : 51
+URL      : https://files.pythonhosted.org/packages/2f/3e/5977970a88d12d36cbe918ee75580cee0d9cdb87870f854dbecd079309dc/cloudflare-2.18.2.tar.gz
+Source0  : https://files.pythonhosted.org/packages/2f/3e/5977970a88d12d36cbe918ee75580cee0d9cdb87870f854dbecd079309dc/cloudflare-2.18.2.tar.gz
 Summary  : Python wrapper for the Cloudflare v4 API
 Group    : Development/Tools
 License  : MIT
@@ -81,13 +81,10 @@ python3 components for the pypi-cloudflare package.
 
 
 %prep
-%setup -q -n cloudflare-2.18.1
-cd %{_builddir}/cloudflare-2.18.1
+%setup -q -n cloudflare-2.18.2
+cd %{_builddir}/cloudflare-2.18.2
 pushd ..
-cp -a cloudflare-2.18.1 buildavx2
-popd
-pushd ..
-cp -a cloudflare-2.18.1 buildapx
+cp -a cloudflare-2.18.2 buildavx2
 popd
 
 %build
@@ -95,7 +92,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1707667621
+export SOURCE_DATE_EPOCH=1707837844
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -118,16 +115,6 @@ CFLAGS="$CLEAR_INTERMEDIATE_CFLAGS -march=x86-64-v3 -Wl,-z,x86-64-v3 "
 CXXFLAGS="$CLEAR_INTERMEDIATE_CXXFLAGS -march=x86-64-v3 -Wl,-z,x86-64-v3 "
 FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS -march=x86-64-v3 -Wl,-z,x86-64-v3 "
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS -march=x86-64-v3 "
-LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS -march=x86-64-v3 "
-python3 setup.py build
-
-popd
-pushd ../buildapx/
-CC=gcc-14
-CFLAGS="$CLEAR_INTERMEDIATE_CFLAGS -march=x86-64-v3 -mapxf -mavx10.1 -Wl,-z,x86-64-v3 "
-CXXFLAGS="$CLEAR_INTERMEDIATE_CXXFLAGS -march=x86-64-v3 -Wl,-z,x86-64-v3 "
-FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS -march=x86-64-v3 -mapxf -mavx10.1 -Wl,-z,x86-64-v3 "
-FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS -march=x86-64-v3 -mapxf -mavx10.1 "
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS -march=x86-64-v3 "
 python3 setup.py build
 
@@ -170,15 +157,6 @@ FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS -march=x86-64-v3 "
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS -march=x86-64-v3 "
 python3 -tt setup.py build install --root=%{buildroot}-v3
 popd
-pushd ../buildapx/
-CC=gcc-14
-CFLAGS="$CLEAR_INTERMEDIATE_CFLAGS -march=x86-64-v3 -mapxf -mavx10.1 -Wl,-z,x86-64-v3 "
-CXXFLAGS="$CLEAR_INTERMEDIATE_CXXFLAGS -march=x86-64-v3 -Wl,-z,x86-64-v3 "
-FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS -march=x86-64-v3 -mapxf -mavx10.1 -Wl,-z,x86-64-v3 "
-FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS -march=x86-64-v3 -mapxf -mavx10.1 "
-LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS -march=x86-64-v3 "
-python3 -tt setup.py build install --root=%{buildroot}-va
-popd
 ## Remove excluded files
 rm -f %{buildroot}*/usr/lib/python*/site-packages/tests/__init__.py
 rm -f %{buildroot}*/usr/lib/python*/site-packages/tests/__pycache__/__init__.cpython-*.pyc
@@ -190,7 +168,6 @@ mkdir -pv $man1dir
 #mv -v %{buildroot}/usr/man/man1/cli4.man $man1dir/cli4.1
 ## install_append end
 /usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
-/usr/bin/elf-move.py apx %{buildroot}-va %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
