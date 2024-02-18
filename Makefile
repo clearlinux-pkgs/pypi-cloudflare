@@ -1,5 +1,5 @@
 PKG_NAME := pypi-cloudflare
-URL = https://files.pythonhosted.org/packages/2f/3e/5977970a88d12d36cbe918ee75580cee0d9cdb87870f854dbecd079309dc/cloudflare-2.18.2.tar.gz
+URL = https://files.pythonhosted.org/packages/1b/bf/ebbb40b2c75ba488b54311e40d86d2432dd74495c6604d93b84f651c7b7a/cloudflare-2.19.0.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
