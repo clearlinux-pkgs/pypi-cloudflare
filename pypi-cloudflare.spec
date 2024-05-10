@@ -6,10 +6,10 @@
 # autospec commit: 5905be9
 #
 Name     : pypi-cloudflare
-Version  : 2.19.4
-Release  : 54
-URL      : https://files.pythonhosted.org/packages/9b/8f/d3a435435c42d4b05ce2274432265c5890f91f6047e6dab52e50c811a4ea/cloudflare-2.19.4.tar.gz
-Source0  : https://files.pythonhosted.org/packages/9b/8f/d3a435435c42d4b05ce2274432265c5890f91f6047e6dab52e50c811a4ea/cloudflare-2.19.4.tar.gz
+Version  : 2.20.0
+Release  : 55
+URL      : https://files.pythonhosted.org/packages/90/f5/32c1d3bfca5e2a166bc535a63ca03948f428347fe5adfddaaf6e2d744d0e/cloudflare-2.20.0.tar.gz
+Source0  : https://files.pythonhosted.org/packages/90/f5/32c1d3bfca5e2a166bc535a63ca03948f428347fe5adfddaaf6e2d744d0e/cloudflare-2.20.0.tar.gz
 Summary  : Python wrapper for the Cloudflare v4 API
 Group    : Development/Tools
 License  : MIT
@@ -32,8 +32,8 @@ BuildRequires : pypi(requests)
 > [!WARNING]
 > Soon there will be two Python packages for accessing Cloudflare's API.
 > 1. This original [package](https://github.com/cloudflare/python-cloudflare), which was initially introduced [here](https://blog.cloudflare.com/python-cloudflare/).
-> 2. A ground-up rewrite of the SDK, released under `3.x`, at some point in the future. See [here](https://github.com/cloudflare/python-cloudflare/discussions/191)
-> If you like using this package in it's present form, it is highly recommended that you pin to the `2.x` releases now.
+> 2. A ground-up rewrite of the SDK, released under `3.*`, at some point in the future. See [here](https://github.com/cloudflare/python-cloudflare/discussions/191)
+> If you like using this package in it's present form, it is highly recommended that you pin to the `2.*` releases now.
 > ```bash
 > $ cat ${YOUR_PROJECT}/requirements.txt
 > cloudflare==2.19.*
@@ -43,7 +43,7 @@ BuildRequires : pypi(requests)
 > ```bash
 > $ pip install --upgrade cloudflare==2.19.*
 > ...
-> Successfully installed cloudflare-2.19.3
+> Successfully installed cloudflare-2.19.4
 > $
 
 %package bin
@@ -94,10 +94,10 @@ python3 components for the pypi-cloudflare package.
 
 
 %prep
-%setup -q -n cloudflare-2.19.4
-cd %{_builddir}/cloudflare-2.19.4
+%setup -q -n cloudflare-2.20.0
+cd %{_builddir}/cloudflare-2.20.0
 pushd ..
-cp -a cloudflare-2.19.4 buildavx2
+cp -a cloudflare-2.20.0 buildavx2
 popd
 
 %build
@@ -105,7 +105,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1714433698
+export SOURCE_DATE_EPOCH=1715352798
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
