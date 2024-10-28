@@ -7,7 +7,7 @@
 #
 Name     : pypi-cloudflare
 Version  : 3.1.0
-Release  : 57
+Release  : 58
 URL      : https://files.pythonhosted.org/packages/ba/97/3634f35fb6c7d1de0a7e690d5605e51ca064d94c0c95b28a9ca52530df02/cloudflare-3.1.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/ba/97/3634f35fb6c7d1de0a7e690d5605e51ca064d94c0c95b28a9ca52530df02/cloudflare-3.1.0.tar.gz
 Summary  : The official Python library for the cloudflare API
